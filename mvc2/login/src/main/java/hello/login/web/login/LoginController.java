@@ -118,6 +118,8 @@ public class LoginController {
         HttpSession session = request.getSession();
         // 세션에 로그인 회원 정보를 보관
         session.setAttribute(SessionConst.LOGIN_MEMBER, loginMember);
+        log.info(">>>>> session.getId {}", session.getId());
+        log.info(">>>>> session.getAttribute(SessionConst.LOGIN_MEMBER) {}", session.getAttribute(SessionConst.LOGIN_MEMBER));
 
         return "redirect:" + redirectURL;
     }
