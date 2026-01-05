@@ -1,4 +1,4 @@
-package hello.core.mbmer;
+package hello.core.member;
 
 public interface MemberService {
 
