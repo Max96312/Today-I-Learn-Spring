@@ -1,0 +1,33 @@
+//데이터 초기화
+set autocommit true;
+delete from member;
+insert into member(member_id, money) values ('oldId',10000);
+
+select * from member;
+
+//트랜잭션 시작
+set autocommit false; //수동 커밋 모드
+insert into member(member_id, money) values ('newId1',10000);
+insert into member(member_id, money) values ('newId2',10000);
+
+select * from member;
+
+commit; //데이터베이스에 반영
+
+select * from member;
+
+//데이터 초기화
+set autocommit true;
+delete from member;
+insert into member(member_id, money) values ('oldId',10000);
+
+//트랜잭션 시작
+set autocommit false; //수동 커밋 모드
+insert into member(member_id, money) values ('newId1',10000);
+insert into member(member_id, money) values ('newId2',10000);
+
+select * from member;
+
+rollback; //롤백으로 데이터베이스에 변경 사항을 반영하지 않는다.
+
+select * from member;
